@@ -19,11 +19,15 @@ import java.util.Objects;
 import static com.sparta.vicky.util.ControllerUtil.*;
 
 @RestController
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RequestMapping("/api/boards/{boardId}/comments")
 public class CommentController {
 
     private final CommentService commentService;
+
+    public CommentController(CommentService commentService) {
+        this.commentService = commentService;
+    }
 
     /**
      * 댓글 작성
